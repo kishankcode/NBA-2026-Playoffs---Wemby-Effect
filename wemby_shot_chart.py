@@ -1,16 +1,15 @@
-from src.fetcher import fetch_player_shot_data
+from src.fetcher import fetch_shot_data
 from src.graphing import plot_shot_chart
 
 def main():
     WEMBY_ID = 1641705 # Victor Wembanyama's actual NBA ID
     
     print("Step 1: Grabbing data from NBA API...")
-    raw_data = fetch_player_shot_data(player_id=WEMBY_ID)
+    raw_data = fetch_shot_data(player_id=WEMBY_ID)
     raw_data.to_csv('data/wemby_shots.csv', index=False)
 
     print("Step 2: Generating the shot chart...")
-    plot_shot_chart(raw_data, player_name="Victor Wembanyama")
-
+    plot_shot_chart(raw_data, subject="Victor Wembanyama", filename="wemby_shots")
 
 if __name__ == "__main__":
     main()

@@ -73,7 +73,7 @@ def draw_court(ax=None, color='#262626', lw=2, outer_lines=True):
 
     return ax
 
-def plot_shot_chart(shot_df, player_name: str):
+def plot_shot_chart(shot_df, subject: str, filename: str):
     """Combines court lines with the player's scattered shot data."""
     fig, ax = plt.subplots(figsize=(8, 6))
     draw_court(ax)
@@ -86,8 +86,8 @@ def plot_shot_chart(shot_df, player_name: str):
     ax.scatter(made_shots['LOC_X'], made_shots['LOC_Y'], c='green', label='Made', alpha=0.6)
     ax.scatter(missed_shots['LOC_X'], missed_shots['LOC_Y'], c='red', label='Missed', marker='x', alpha=0.5)
     
-    ax.set_title(f"{player_name} Shot Chart")
+    ax.set_title(f"{subject} Shot Chart")
     ax.legend()
     plt.tight_layout()
-    plt.savefig("./visualizations/wemby_shots.png")
+    plt.savefig(f"./visualizations/{filename}.png")
     plt.show()
