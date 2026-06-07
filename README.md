@@ -13,11 +13,11 @@ python wemby_shot_chart.py
 ## Visualizations
 
 ### 1. Victor Wembanyama's Playoff Shot Chart
-![Wemby Shots](wemby_shots.png)
+![Wemby's Shots](visualizations/wemby_shots.png)
 
 ### 2. Knicks Shot Chart (Wemby Off-Court)
-![Knicks without Wemby](knicks_no_wemby.png)
+![Knicks without Wemby](visualizations/knicks_no_wemby.png)
 
 ### 3. Knicks Shot Chart (Wemby On-Court)
-![Knicks with Wemby](knicks_with_wemby.png)
+![Knicks with Wemby](visualizations/knicks_with_wemby.png)
 
