@@ -2,7 +2,7 @@ from src.fetcher import fetch_shot_data
 from src.graphing import plot_shot_chart
 
 def main():
-    WEMBY_ID = 1641705 # Victor Wembanyama's actual NBA ID
+    WEMBY_ID = 1641705
     
     print("Step 1: Grabbing data from NBA API...")
     raw_data = fetch_shot_data(player_id=WEMBY_ID)
