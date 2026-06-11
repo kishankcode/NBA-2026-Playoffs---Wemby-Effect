@@ -86,6 +86,22 @@ def plot_shot_chart(shot_df, subject: str, filename: str):
     ax.scatter(made_shots['LOC_X'], made_shots['LOC_Y'], c='green', label='Made', alpha=0.6)
     ax.scatter(missed_shots['LOC_X'], missed_shots['LOC_Y'], c='red', label='Missed', marker='x', alpha=0.5)
     
+    fg_pct = (len(made_shots) / len(shot_df)) * 100
+    ax.text(
+        x=0.935, y=0.82, s=f"FG%: {fg_pct:.1f}%",
+        transform=ax.transAxes,
+        ha="right", va="top",
+        fontsize=14,
+        fontweight="bold",  
+        color="#222222",
+        bbox=dict(
+            facecolor="white",
+            edgecolor="#cccccc",
+            boxstyle="round,pad=0.5",
+            alpha=0.9
+            )
+        )
+
     ax.set_title(f"{subject} Shot Chart", fontsize=20)
     ax.legend(bbox_to_anchor=(0.95, 0.92), fontsize="x-large")
     plt.tight_layout()
